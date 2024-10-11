@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FINALBroadcastLibrary\FINALBroadcastLibrary\FINALBroadcastLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BroadcastLibrary">
+      <HintPath>..\..\BroadcastLibrary\BroadcastLibrary\bin\Debug\net8.0\BroadcastLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

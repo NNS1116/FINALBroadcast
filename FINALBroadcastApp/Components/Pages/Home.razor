@@ -1,0 +1,31 @@
+﻿@page "/"
+
+@inject HttpClient httpClient
+
+<PageTitle>Broadcast Message</PageTitle>
+
+<h3>Broadcast Message</h3>
+
+
+@if (!string.IsNullOrEmpty(broadcastMessage))
+{
+	<p><strong>Message: </strong>@broadcastMessage</p>
+}
+else
+{
+	<p>No message found or an error occurred.</p>
+}
+
+@code {
+	private string? broadcastMessage;
+
+	protected override async Task OnInitializedAsync()
+	{
+		await GetBroadCastMessage();
+	}
+
+	public async Task GetBroadCastMessage()
+	{
+		broadcastMessage = await httpClient.GetStringAsync("http://localhost:5033/api/Broadcast/getBroadcastMessage");
+	}
+}
